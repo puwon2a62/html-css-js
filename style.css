@@ -381,6 +381,13 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.animation-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -392,6 +399,10 @@ button {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
@@ -520,7 +531,7 @@ button {
 
 .arrow__up.visible {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: autinvisibleo;
 }
 
 /* For below 768px screen width */
