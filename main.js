@@ -3,6 +3,7 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 
+
 document.addEventListener('scroll', () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark')
@@ -10,6 +11,21 @@ document.addEventListener('scroll', () => {
     navbar.classList.remove('navbar--dark')
   }
 });
+
+const arrowUP = document.querySelector('.arrow__up');
+// Show "arrow up" button when scrolling down
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUP.classList.add('visible');
+  } else {
+    arrowUP.classList.remove('visible');
+  }
+})
+
+// Handle click on the "arrow up" button
+arrowUP.addEventListener('click', () => {
+  scrollIntoView('#home');
+})
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -33,3 +49,10 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+})
+
