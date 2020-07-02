@@ -220,6 +220,7 @@ button {
 /* Section common */
 .section {
   padding: 50px;
+  padding-top: 40px;
   text-align: center;
   margin: auto;
 }
@@ -365,7 +366,7 @@ button {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 6px;
 }
 
 .category__count {
@@ -484,10 +485,13 @@ button {
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
+  background-color: var(--color-yellow);
+  vertical-align: middle;
 }
 
 .testimonial__speech-bubble p {
   color: var(--color-light-grey);
+  vertical-align: middle;
 }
 
 .testimonial__speech-bubble a {
